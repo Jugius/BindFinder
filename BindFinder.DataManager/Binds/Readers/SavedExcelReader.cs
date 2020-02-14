@@ -1,6 +1,8 @@
 ﻿using BindFinder.AppModels.Binds;
 using Geocoding;
+using Microsoft.Office.Interop.Excel;
 using Ookii.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -10,7 +12,7 @@ namespace BindFinder.DataManager.Binds.Readers
     class SavedExcelReader : UsingExcel.ExcelApplication, IProcessor
     {
         private ProgressDialog ProgressDialog;
-        private string excelFile;
+        private readonly string excelFile;
 
         public SavedExcelReader(string excelFile)
         {
@@ -32,7 +34,7 @@ namespace BindFinder.DataManager.Binds.Readers
                 Excel.Range workRange = xlWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell);
 
                 int lastRow = workRange.Row;
-                int firstRow = 2;
+                const int firstRow = 2;
                 int bindsCount = lastRow - firstRow + 1;
                 int done = 0;
                 this.ProgressDialog.Maximum = bindsCount;
@@ -43,15 +45,15 @@ namespace BindFinder.DataManager.Binds.Readers
                     bind.OriginalAddress = xlWorkSheet.Range["A" + i].Value?.ToString();
                     bind.Description = xlWorkSheet.Range["K" + i].Value?.ToString();
 
-                    string country = string.Empty, region = string.Empty, city = string.Empty, district = string.Empty, street = string.Empty, streetNumber = string.Empty, zip = string.Empty, placeId = string.Empty;
-                    country = xlWorkSheet.Range["D" + i].Value?.ToString();
-                    region = xlWorkSheet.Range["E" + i].Value?.ToString();
-                    city = xlWorkSheet.Range["F" + i].Value?.ToString();
-                    district = xlWorkSheet.Range["G" + i].Value?.ToString();
-                    street = xlWorkSheet.Range["H" + i].Value?.ToString();
-                    streetNumber = xlWorkSheet.Range["I" + i].Value?.ToString();
-                    zip = xlWorkSheet.Range["J" + i].Value?.ToString();
-                    placeId = xlWorkSheet.Range["M" + i].Value?.ToString();
+                    string country, region, city, district, street, streetNumber, zip, placeId;
+                    country = GetRangeString(xlWorkSheet.Range["D" + i]);
+                    region = GetRangeString(xlWorkSheet.Range["E" + i]);
+                    city = GetRangeString(xlWorkSheet.Range["F" + i]);
+                    district = GetRangeString(xlWorkSheet.Range["G" + i]);
+                    street = GetRangeString(xlWorkSheet.Range["H" + i]);
+                    streetNumber = GetRangeString(xlWorkSheet.Range["I" + i]);
+                    zip = GetRangeString(xlWorkSheet.Range["J" + i]);
+                    placeId = GetRangeString(xlWorkSheet.Range["M" + i]);
 
                     string formatted = $"{country}, {city}, {street}, {streetNumber}".TrimEnd(',', ' ');
 
@@ -88,5 +90,7 @@ namespace BindFinder.DataManager.Binds.Readers
                 ExitExcelApplication();
             }
         }
+
+        private static string GetRangeString(Range range) => range.Value == null ? string.Empty : range.Value.ToString();
     }
 }

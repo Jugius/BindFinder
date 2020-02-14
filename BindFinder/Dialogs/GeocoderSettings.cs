@@ -38,7 +38,7 @@ namespace BindFinder.Dialogs
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string message = "Для использования сервиса Google Maps необходимо наличие API ключа. Вы можете зарегистрировать его на сайте Google Clouds.\n\nПерейти на сайт Google Clouds?";
+            const string message = "Для использования сервиса Google Maps необходимо наличие API ключа. Вы можете зарегистрировать его на сайте Google Clouds.\n\nПерейти на сайт Google Clouds?";
             if (MessageBox.Show(message, "Google Maps API", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Process.Start(@"https://cloud.google.com/maps-platform/");
         }

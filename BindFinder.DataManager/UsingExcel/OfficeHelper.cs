@@ -39,7 +39,7 @@ namespace BindFinder.DataManager.UsingExcel
             worksheet.Range["L:L"].ColumnWidth = 10;
             worksheet.Range["M:M"].ColumnWidth = 25;
 
-            string leftSheetChar = "M";
+            const string leftSheetChar = "M";
 
             worksheet.ListObjects.Add(Excel.XlListObjectSourceType.xlSrcRange, worksheet.Range[$"A1:{leftSheetChar}2"], Type.Missing, Excel.XlYesNoGuess.xlYes, Type.Missing).Name = "ReportTable";
             worksheet.Range[$"A1:{leftSheetChar}2"].Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.FromArgb(30, 55, 55));
@@ -75,7 +75,7 @@ namespace BindFinder.DataManager.UsingExcel
             worksheet.Range["R1"].Value = "Адрес точки";
             worksheet.Range["S1"].Value = "Описание точки";           
 
-            string leftSheetChar = "S";
+            const string leftSheetChar = "S";
 
             worksheet.ListObjects.Add(Excel.XlListObjectSourceType.xlSrcRange, worksheet.Range[$"A1:{leftSheetChar}2"], Type.Missing, Excel.XlYesNoGuess.xlYes, Type.Missing).Name = "ReportTable";
             worksheet.Range[$"A1:{leftSheetChar}2"].Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;

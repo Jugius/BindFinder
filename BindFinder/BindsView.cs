@@ -292,6 +292,9 @@ namespace BindFinder
             string path = Dialogs.Helper.SaveAsKml();
             if (string.IsNullOrEmpty(path)) return;
 
+            if (System.IO.File.Exists(path))
+                System.IO.File.Delete(path);
+
             var progress = new DataManager.Binds.Writers.WriterBuilder().Build(binds, path);
             progress.RunWorkerCompleted += Progress_RunWorkerCompleted;
             progress.ShowDialog(this, binds);

@@ -264,12 +264,12 @@ namespace BindFinder
                 binds.Add(item as Bind);
             }
 
-            if (binds.SelectMany(a => a.BindedBoards).Count() == 0)
+            if (!binds.SelectMany(a => a.BindedBoards).Any())
             {
                 MessageBox.Show("Нет плоскостей в этих привязках.", "Ошибка экспорта", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (binds.SelectMany(a => a.BindedBoards).Where(a => a.IsChecked).Count() == 0)
+            if (!binds.SelectMany(a => a.BindedBoards).Any(a => a.IsChecked))
             {
                 MessageBox.Show("Нет отмеченных плоскостей.", "Ошибка экспорта", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -303,7 +303,7 @@ namespace BindFinder
 
         private void MnuCheckAll_Click(object sender, System.EventArgs e)
         {
-            string message = "Будут отмечены все плоскости во всех привязках. Продолжить?";
+            const string message = "Будут отмечены все плоскости во всех привязках. Продолжить?";
             if (MessageBox.Show(message, "Выделение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
             foreach (var obj in olvBinds.Objects)
@@ -313,7 +313,7 @@ namespace BindFinder
 
         private void MnuUncheckAll_Click(object sender, System.EventArgs e)
         {
-            string message = "Будут сняты отметки для всех плоскостей во всех привязках. Продолжить?";
+            const string message = "Будут сняты отметки для всех плоскостей во всех привязках. Продолжить?";
             if (MessageBox.Show(message, "Выделение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
             foreach (var obj in olvBinds.Objects)
@@ -365,7 +365,7 @@ namespace BindFinder
         private void MnuRemoveAllEmptyBinds_Click(object sender, System.EventArgs e)
         {
             var binds = olvBinds.CollectCheckedObjects<Bind>(ObjectListViewHelper.ObjectListViewCollector.All)
-                .Where(a => a.BindedBoards.Where(b => b.IsChecked).Count() < 1).ToList();
+                .Where(a => a.BindedBoards.Any(b => b.IsChecked)).ToList();
             olvBinds.RemoveObjects(binds);
             //foreach (var bind in binds)
             //    if (bind.BindedBoards.Where(a => a.IsChecked).Count() < 1)
