@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DBSet" targetNamespace="http://tempuri.org/DBSet.xsd" xmlns:mstns="http://tempuri.org/DBSet.xsd" xmlns="http://tempuri.org/DBSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.BindFinder.DataManager.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="nos_v2TableAdapter" GeneratorDataComponentClassName="nos_v2TableAdapter" Name="nos_v2" UserDataComponentName="nos_v2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="nos_v2" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        city, type, owner, snjt, dat_snjt, x, y, streets, house, looc, place_city, number, ots, ndex, dix, storona, `size`, lighting, d_id, n_city
+FROM            nos_v2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="city" DataSetColumn="city" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="owner" DataSetColumn="owner" />
+              <Mapping SourceColumn="snjt" DataSetColumn="snjt" />
+              <Mapping SourceColumn="dat_snjt" DataSetColumn="dat_snjt" />
+              <Mapping SourceColumn="x" DataSetColumn="x" />
+              <Mapping SourceColumn="y" DataSetColumn="y" />
+              <Mapping SourceColumn="streets" DataSetColumn="streets" />
+              <Mapping SourceColumn="house" DataSetColumn="house" />
+              <Mapping SourceColumn="looc" DataSetColumn="looc" />
+              <Mapping SourceColumn="place_city" DataSetColumn="place_city" />
+              <Mapping SourceColumn="number" DataSetColumn="number" />
+              <Mapping SourceColumn="ots" DataSetColumn="ots" />
+              <Mapping SourceColumn="ndex" DataSetColumn="ndex" />
+              <Mapping SourceColumn="dix" DataSetColumn="dix" />
+              <Mapping SourceColumn="storona" DataSetColumn="storona" />
+              <Mapping SourceColumn="size" DataSetColumn="size" />
+              <Mapping SourceColumn="lighting" DataSetColumn="lighting" />
+              <Mapping SourceColumn="d_id" DataSetColumn="d_id" />
+              <Mapping SourceColumn="n_city" DataSetColumn="n_city" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NosDataTableTableAdapter" GeneratorDataComponentClassName="NosDataTableTableAdapter" Name="NosDataTable" UserDataComponentName="NosDataTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nos_v2.city, nos_v2.type, nos_v2.owner AS Supplier, nos_v2.snjt AS Deleted, nos_v2.x AS Longitude, nos_v2.y AS Latitude, nos_v2.streets AS Street, nos_v2.house AS StreetNumber, nos_v2.looc AS Description, 
+                         nos_v2.number AS Code, nos_v2.ots, nos_v2.ndex AS GRP, nos_v2.dix AS ID, nos_v2.storona AS Side, nos_v2.`size`, nos_v2.d_id, nos_v2.lighting, cities.short_nam AS CityShort
+FROM            nos_v2, cities
+WHERE        nos_v2.n_city = cities.id_city</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="city" DataSetColumn="city" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="supplier" DataSetColumn="supplier" />
+              <Mapping SourceColumn="deleted" DataSetColumn="deleted" />
+              <Mapping SourceColumn="longitude" DataSetColumn="longitude" />
+              <Mapping SourceColumn="latitude" DataSetColumn="latitude" />
+              <Mapping SourceColumn="street" DataSetColumn="street" />
+              <Mapping SourceColumn="streetnumber" DataSetColumn="streetnumber" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="code" DataSetColumn="code" />
+              <Mapping SourceColumn="ots" DataSetColumn="ots" />
+              <Mapping SourceColumn="grp" DataSetColumn="grp" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="side" DataSetColumn="side" />
+              <Mapping SourceColumn="size" DataSetColumn="size" />
+              <Mapping SourceColumn="d_id" DataSetColumn="d_id" />
+              <Mapping SourceColumn="lighting" DataSetColumn="lighting" />
+              <Mapping SourceColumn="cityshort" DataSetColumn="cityshort" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DBSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DBSet" msprop:Generator_UserDSName="DBSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="nos_v2" msprop:Generator_TableClassName="nos_v2DataTable" msprop:Generator_TableVarName="tablenos_v2" msprop:Generator_RowChangedName="nos_v2RowChanged" msprop:Generator_TablePropName="nos_v2" msprop:Generator_RowDeletingName="nos_v2RowDeleting" msprop:Generator_RowChangingName="nos_v2RowChanging" msprop:Generator_RowEvHandlerName="nos_v2RowChangeEventHandler" msprop:Generator_RowDeletedName="nos_v2RowDeleted" msprop:Generator_RowClassName="nos_v2Row" msprop:Generator_UserTableName="nos_v2" msprop:Generator_RowEvArgName="nos_v2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="owner" msprop:Generator_ColumnVarNameInTable="columnowner" msprop:Generator_ColumnPropNameInRow="owner" msprop:Generator_ColumnPropNameInTable="ownerColumn" msprop:Generator_UserColumnName="owner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="snjt" msprop:Generator_ColumnVarNameInTable="columnsnjt" msprop:Generator_ColumnPropNameInRow="snjt" msprop:Generator_ColumnPropNameInTable="snjtColumn" msprop:Generator_UserColumnName="snjt" type="xs:boolean" minOccurs="0" />
+              <xs:element name="dat_snjt" msprop:Generator_ColumnVarNameInTable="columndat_snjt" msprop:Generator_ColumnPropNameInRow="dat_snjt" msprop:Generator_ColumnPropNameInTable="dat_snjtColumn" msprop:Generator_UserColumnName="dat_snjt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="x" msprop:Generator_ColumnVarNameInTable="columnx" msprop:Generator_ColumnPropNameInRow="x" msprop:Generator_ColumnPropNameInTable="xColumn" msprop:Generator_UserColumnName="x" type="xs:decimal" minOccurs="0" />
+              <xs:element name="y" msprop:Generator_ColumnVarNameInTable="columny" msprop:Generator_ColumnPropNameInRow="y" msprop:Generator_ColumnPropNameInTable="yColumn" msprop:Generator_UserColumnName="y" type="xs:decimal" minOccurs="0" />
+              <xs:element name="streets" msprop:Generator_ColumnVarNameInTable="columnstreets" msprop:Generator_ColumnPropNameInRow="streets" msprop:Generator_ColumnPropNameInTable="streetsColumn" msprop:Generator_UserColumnName="streets" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="house" msprop:Generator_ColumnVarNameInTable="columnhouse" msprop:Generator_ColumnPropNameInRow="house" msprop:Generator_ColumnPropNameInTable="houseColumn" msprop:Generator_UserColumnName="house" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="looc" msprop:Generator_ColumnVarNameInTable="columnlooc" msprop:Generator_ColumnPropNameInRow="looc" msprop:Generator_ColumnPropNameInTable="loocColumn" msprop:Generator_UserColumnName="looc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="place_city" msprop:Generator_ColumnVarNameInTable="columnplace_city" msprop:Generator_ColumnPropNameInRow="place_city" msprop:Generator_ColumnPropNameInTable="place_cityColumn" msprop:Generator_UserColumnName="place_city" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="number" msprop:Generator_ColumnVarNameInTable="columnnumber" msprop:Generator_ColumnPropNameInRow="number" msprop:Generator_ColumnPropNameInTable="numberColumn" msprop:Generator_UserColumnName="number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ots" msprop:Generator_ColumnVarNameInTable="columnots" msprop:Generator_ColumnPropNameInRow="ots" msprop:Generator_ColumnPropNameInTable="otsColumn" msprop:Generator_UserColumnName="ots" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ndex" msprop:Generator_ColumnVarNameInTable="columnndex" msprop:Generator_ColumnPropNameInRow="ndex" msprop:Generator_ColumnPropNameInTable="ndexColumn" msprop:Generator_UserColumnName="ndex" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dix" msprop:Generator_ColumnVarNameInTable="columndix" msprop:Generator_ColumnPropNameInRow="dix" msprop:Generator_ColumnPropNameInTable="dixColumn" msprop:Generator_UserColumnName="dix" type="xs:int" minOccurs="0" />
+              <xs:element name="storona" msprop:Generator_ColumnVarNameInTable="columnstorona" msprop:Generator_ColumnPropNameInRow="storona" msprop:Generator_ColumnPropNameInTable="storonaColumn" msprop:Generator_UserColumnName="storona" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="size" msprop:Generator_ColumnVarNameInTable="columnsize" msprop:Generator_ColumnPropNameInRow="size" msprop:Generator_ColumnPropNameInTable="sizeColumn" msprop:Generator_UserColumnName="size" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lighting" msprop:Generator_ColumnVarNameInTable="columnlighting" msprop:Generator_ColumnPropNameInRow="lighting" msprop:Generator_ColumnPropNameInTable="lightingColumn" msprop:Generator_UserColumnName="lighting" type="xs:decimal" minOccurs="0" />
+              <xs:element name="d_id" msprop:Generator_ColumnVarNameInTable="columnd_id" msprop:Generator_ColumnPropNameInRow="d_id" msprop:Generator_ColumnPropNameInTable="d_idColumn" msprop:Generator_UserColumnName="d_id" type="xs:int" minOccurs="0" />
+              <xs:element name="n_city" msprop:Generator_ColumnVarNameInTable="columnn_city" msprop:Generator_ColumnPropNameInRow="n_city" msprop:Generator_ColumnPropNameInTable="n_cityColumn" msprop:Generator_UserColumnName="n_city" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NosDataTable" msprop:Generator_TableClassName="NosDataTableDataTable" msprop:Generator_TableVarName="tableNosDataTable" msprop:Generator_TablePropName="NosDataTable" msprop:Generator_RowDeletingName="NosDataTableRowDeleting" msprop:Generator_RowChangingName="NosDataTableRowChanging" msprop:Generator_RowEvHandlerName="NosDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="NosDataTableRowDeleted" msprop:Generator_UserTableName="NosDataTable" msprop:Generator_RowChangedName="NosDataTableRowChanged" msprop:Generator_RowEvArgName="NosDataTableRowChangeEvent" msprop:Generator_RowClassName="NosDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="supplier" msprop:Generator_ColumnVarNameInTable="columnsupplier" msprop:Generator_ColumnPropNameInRow="supplier" msprop:Generator_ColumnPropNameInTable="supplierColumn" msprop:Generator_UserColumnName="supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="deleted" msprop:Generator_ColumnVarNameInTable="columndeleted" msprop:Generator_ColumnPropNameInRow="deleted" msprop:Generator_ColumnPropNameInTable="deletedColumn" msprop:Generator_UserColumnName="deleted" type="xs:boolean" minOccurs="0" />
+              <xs:element name="longitude" msprop:Generator_ColumnVarNameInTable="columnlongitude" msprop:Generator_ColumnPropNameInRow="longitude" msprop:Generator_ColumnPropNameInTable="longitudeColumn" msprop:Generator_UserColumnName="longitude" type="xs:decimal" minOccurs="0" />
+              <xs:element name="latitude" msprop:Generator_ColumnVarNameInTable="columnlatitude" msprop:Generator_ColumnPropNameInRow="latitude" msprop:Generator_ColumnPropNameInTable="latitudeColumn" msprop:Generator_UserColumnName="latitude" type="xs:decimal" minOccurs="0" />
+              <xs:element name="street" msprop:Generator_ColumnVarNameInTable="columnstreet" msprop:Generator_ColumnPropNameInRow="street" msprop:Generator_ColumnPropNameInTable="streetColumn" msprop:Generator_UserColumnName="street" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="streetnumber" msprop:Generator_ColumnVarNameInTable="columnstreetnumber" msprop:Generator_ColumnPropNameInRow="streetnumber" msprop:Generator_ColumnPropNameInTable="streetnumberColumn" msprop:Generator_UserColumnName="streetnumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ots" msprop:Generator_ColumnVarNameInTable="columnots" msprop:Generator_ColumnPropNameInRow="ots" msprop:Generator_ColumnPropNameInTable="otsColumn" msprop:Generator_UserColumnName="ots" type="xs:decimal" minOccurs="0" />
+              <xs:element name="grp" msprop:Generator_ColumnVarNameInTable="columngrp" msprop:Generator_ColumnPropNameInRow="grp" msprop:Generator_ColumnPropNameInTable="grpColumn" msprop:Generator_UserColumnName="grp" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="side" msprop:Generator_ColumnVarNameInTable="columnside" msprop:Generator_ColumnPropNameInRow="side" msprop:Generator_ColumnPropNameInTable="sideColumn" msprop:Generator_UserColumnName="side" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="size" msprop:Generator_ColumnVarNameInTable="columnsize" msprop:Generator_ColumnPropNameInRow="size" msprop:Generator_ColumnPropNameInTable="sizeColumn" msprop:Generator_UserColumnName="size" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="d_id" msprop:Generator_ColumnVarNameInTable="columnd_id" msprop:Generator_ColumnPropNameInRow="d_id" msprop:Generator_ColumnPropNameInTable="d_idColumn" msprop:Generator_UserColumnName="d_id" type="xs:int" minOccurs="0" />
+              <xs:element name="lighting" msprop:Generator_ColumnVarNameInTable="columnlighting" msprop:Generator_ColumnPropNameInRow="lighting" msprop:Generator_ColumnPropNameInTable="lightingColumn" msprop:Generator_UserColumnName="lighting" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cityshort" msprop:Generator_ColumnVarNameInTable="columncityshort" msprop:Generator_ColumnPropNameInRow="cityshort" msprop:Generator_ColumnPropNameInTable="cityshortColumn" msprop:Generator_UserColumnName="cityshort" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
