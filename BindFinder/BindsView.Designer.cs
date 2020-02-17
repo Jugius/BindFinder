@@ -130,7 +130,7 @@
             this.mnuAddBindsInputBox.Image = global::BindFinder.Properties.Resources.TextBox_24;
             this.mnuAddBindsInputBox.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuAddBindsInputBox.Name = "mnuAddBindsInputBox";
-            this.mnuAddBindsInputBox.Size = new System.Drawing.Size(336, 30);
+            this.mnuAddBindsInputBox.Size = new System.Drawing.Size(337, 30);
             this.mnuAddBindsInputBox.Text = "Импорт - Поле ввода";
             this.mnuAddBindsInputBox.Click += new System.EventHandler(this.MnuAddBindsInputBox_Click);
             // 
@@ -140,20 +140,20 @@
             this.mnuAddBindsExcel.Image = global::BindFinder.Properties.Resources.Excel_24;
             this.mnuAddBindsExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuAddBindsExcel.Name = "mnuAddBindsExcel";
-            this.mnuAddBindsExcel.Size = new System.Drawing.Size(336, 30);
+            this.mnuAddBindsExcel.Size = new System.Drawing.Size(337, 30);
             this.mnuAddBindsExcel.Text = "Импорт из файла Excel";
             this.mnuAddBindsExcel.Click += new System.EventHandler(this.MnuAddBindsExcel_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(333, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(334, 6);
             // 
             // mnuSaveBindsToExcel
             // 
             this.mnuSaveBindsToExcel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mnuSaveBindsToExcel.Name = "mnuSaveBindsToExcel";
-            this.mnuSaveBindsToExcel.Size = new System.Drawing.Size(336, 30);
+            this.mnuSaveBindsToExcel.Size = new System.Drawing.Size(337, 30);
             this.mnuSaveBindsToExcel.Text = "Сохранить привязки в Excel";
             this.mnuSaveBindsToExcel.Click += new System.EventHandler(this.MnuSaveBindsToExcel_Click);
             // 
@@ -161,22 +161,22 @@
             // 
             this.mnuLoadSavedBinds.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mnuLoadSavedBinds.Name = "mnuLoadSavedBinds";
-            this.mnuLoadSavedBinds.Size = new System.Drawing.Size(336, 30);
+            this.mnuLoadSavedBinds.Size = new System.Drawing.Size(337, 30);
             this.mnuLoadSavedBinds.Text = "Загрузить сохраненный Excel";
             this.mnuLoadSavedBinds.Click += new System.EventHandler(this.MnuLoadSavedBinds_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(333, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(334, 6);
             // 
             // mnuSaveBindsToKml
             // 
             this.mnuSaveBindsToKml.Image = global::BindFinder.Properties.Resources.GoogleEarth_24;
             this.mnuSaveBindsToKml.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnuSaveBindsToKml.Name = "mnuSaveBindsToKml";
-            this.mnuSaveBindsToKml.Size = new System.Drawing.Size(336, 30);
-            this.mnuSaveBindsToKml.Text = "Сохранить привязки в KML (Google Earth)";
+            this.mnuSaveBindsToKml.Size = new System.Drawing.Size(337, 30);
+            this.mnuSaveBindsToKml.Text = "Сохранить привязки в KMZ (Google Earth)";
             this.mnuSaveBindsToKml.Click += new System.EventHandler(this.MnuSaveBindsToKml_Click);
             // 
             // toolStripSeparator2
@@ -380,6 +380,7 @@
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
             this.statusStrip1.Size = new System.Drawing.Size(824, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 

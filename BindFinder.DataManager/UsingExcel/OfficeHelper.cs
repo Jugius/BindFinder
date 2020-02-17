@@ -49,6 +49,8 @@ namespace BindFinder.DataManager.UsingExcel
             worksheet.Range[$"A1:{leftSheetChar}1"].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.FromArgb(153, 180, 209));
             worksheet.Range[$"A2:{leftSheetChar}2"].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
             worksheet.Range[$"A1:{leftSheetChar}2"].Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+            worksheet.Range["I2"].NumberFormat = "@";
         }
 
         internal static void FormatExportBoardsPage(Excel.Worksheet worksheet)

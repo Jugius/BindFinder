@@ -95,7 +95,7 @@ namespace BindFinder.Dialogs
         {
             using (SaveFileDialog dlg = new SaveFileDialog())
             {
-                dlg.Filter = "Файлы Kml|*.kml";
+                dlg.Filter = "Файлы Kmz|*.kmz";
                 if (dlg.ShowDialog()== DialogResult.OK)
                 {
                     return dlg.FileName;

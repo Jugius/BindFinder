@@ -180,7 +180,7 @@ namespace BindFinder
         private void MnuStartXMLRequest_Click(object sender, EventArgs e)
         {
             if (olvBinds.SelectedObject == null) return;
-            Geocoding.Google.GoogleGeocoder _geocoder = Helpers.GeocoderHelper.GetGeocoder() as Geocoding.Google.GoogleGeocoder;
+            var _geocoder = GeocoderHelper.GetGeocoder() as Geocoding.Google.GoogleGeocoder;
             if (_geocoder == null) return;
             _geocoder.Language = Helpers.GeocoderHelper.QueryLanguage;
             System.Diagnostics.Process.Start(_geocoder.BuildWebRequest((olvBinds.SelectedObject as Bind).OriginalAddress));
