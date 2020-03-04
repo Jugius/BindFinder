@@ -1,10 +1,8 @@
 ﻿using Geocoding;
 using Geocoding.Google;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BindFinder.AppModels.Binds
 {
@@ -31,13 +29,14 @@ namespace BindFinder.AppModels.Binds
         }
         private string BuildFormattedAddress()
         {
-            return $"{Country}, {City}, {Street}, {StreetNumber}, {Intersection}".TrimEnd(',', ' ');
+            return $"{City}, {Street}, {StreetNumber}, {Intersection}".TrimEnd(',', ' ');
+            //return $"{Country}, {City}, {Street}, {StreetNumber}, {Intersection}".TrimEnd(',', ' ');
         }
         internal string ExtractStreet(string address)
         {
             if (string.IsNullOrEmpty(address)) return null;
 
-            string newStr = address.Clone() as string;
+            string newStr = string.Copy(address);
             if (!string.IsNullOrEmpty(this.Country)) newStr = newStr.Replace(this.Country, "");
             if (!string.IsNullOrEmpty(this.Region)) newStr = newStr.Replace(this.Region, "");
             if (!string.IsNullOrEmpty(this.City)) newStr = newStr.Replace(this.City, "");

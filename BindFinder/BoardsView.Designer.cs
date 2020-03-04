@@ -180,13 +180,13 @@
             // 
             // toolStripButton3
             // 
-            this.toolStripButton3.Enabled = false;
             this.toolStripButton3.Image = global::BindFinder.Properties.Resources.Database_24;
             this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(103, 29);
             this.toolStripButton3.Text = "База данных";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator7
             // 

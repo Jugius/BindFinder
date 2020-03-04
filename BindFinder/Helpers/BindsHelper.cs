@@ -1,11 +1,8 @@
 ﻿using BindFinder.AppModels.Binds;
 using BindFinder.AppModels.Boards;
 using Geocoding;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BindFinder.Helpers
 {
@@ -33,6 +30,6 @@ namespace BindFinder.Helpers
         {
             if (b.Error == null)
                 System.Diagnostics.Process.Start(@"https://www.google.com/maps/search/" + b.Address.Coordinates.ToString());
-        }        
+        }
     }
 }

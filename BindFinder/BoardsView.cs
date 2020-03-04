@@ -50,10 +50,10 @@ namespace BindFinder
             }
 
             olvColumn_Code.AspectGetter = delegate (object row) { return ((IBoard)row).Code; };
-            olvColumn_GRP.AspectGetter = delegate (object row) { return (row as IBoard).Metrics.GRP; };
+            olvColumn_GRP.AspectGetter = delegate (object row) { return (row as IBoard).Metrics?.GRP; };
             olvColumn_ID.AspectGetter = delegate (object row) { return (row as IBoard).ID; };
             olvColumn_Light.AspectGetter = delegate (object row) { return (row as IBoard).Lighting ? "+" : null; };
-            olvColumn_OTS.AspectGetter = delegate (object row) { return (row as IBoard).Metrics.OTS; };
+            olvColumn_OTS.AspectGetter = delegate (object row) { return (row as IBoard).Metrics?.OTS; };
             olvColumn_Side.AspectGetter = delegate (object row) { return (row as IBoard).Side; };
             olvColumn_Size.AspectGetter = delegate (object row) { return (row as IBoard).Size; };
             olvColumn_Street.AspectGetter = delegate (object row) { return (row as IBoard).Address.Street; };
@@ -109,20 +109,20 @@ namespace BindFinder
             picturePhoto.Image = pictureSchema.Image = pictureMap.Image = null;
             if (olvBoards.SelectedObject == null) return;
             IBoard brd = olvBoards.SelectedObject as IBoard;
-            Bind bind = olvBinds.SelectedObject as Bind;
+            //Bind bind = olvBinds.SelectedObject as Bind;
             picturePhoto.LoadAsync(brd.URL_Photo);
             pictureSchema.LoadAsync(brd.URL_Map);
 
             if (string.IsNullOrEmpty(Helpers.GeocoderHelper.GoogleAPIKey)) return;
-            var stMap = new Geocoding.Google.GoogleStaticMap(Helpers.GeocoderHelper.GoogleAPIKey) { Scale = 2, Zoom = 0 };
-            stMap.Language = Helpers.GeocoderHelper.QueryLanguage;
-            var markers = new Geocoding.Google.GoogleMarker[]
-            {
-                new Geocoding.Google.GoogleMarker(brd.Location),
-                new Geocoding.Google.GoogleMarker(bind.Address.Coordinates) { Color = Geocoding.Google.GoogleMarker.MarkerColor.orange }
-            };
-            var uri = stMap.BuildUri(markers);
-            pictureMap.Image = Helpers.ImageHelper.GetImage(uri);
+            //var stMap = new Geocoding.Google.GoogleStaticMap(Helpers.GeocoderHelper.GoogleAPIKey) { Scale = 2, Zoom = 0 };
+            //stMap.Language = Helpers.GeocoderHelper.QueryLanguage;
+            //var markers = new Geocoding.Google.GoogleMarker[]
+            //{
+            //    new Geocoding.Google.GoogleMarker(brd.Location),
+            //    new Geocoding.Google.GoogleMarker(bind.Address.Coordinates) { Color = Geocoding.Google.GoogleMarker.MarkerColor.orange }
+            //};
+            //var uri = stMap.BuildUri(markers);
+            //pictureMap.Image = Helpers.ImageHelper.GetImage(uri);
 
 
         }
@@ -391,6 +391,12 @@ namespace BindFinder
                 dlg.ShowDialog(this);
             }
         }
-     
+
+        private void toolStripButton3_Click(object sender, System.EventArgs e)
+        {
+            var reader = Helpers.OuthubHelper.GetDataReader();
+            var boards = reader.ReadData().ToList();
+            olvBoards.SetObjects(boards);
+        }
     }
 }

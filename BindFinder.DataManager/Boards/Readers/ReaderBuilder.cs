@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BindFinder.DataManager.Boards.Readers
 {
     public class ReaderBuilder
     {
+        
+        
         public AppModels.DataReaders.IBoardsReader Build(BoardsReadParameters p)
         {
             if (p is BoardsReadParameters_Doors)
@@ -26,7 +24,16 @@ namespace BindFinder.DataManager.Boards.Readers
                 r.Year = b.Year;
                 return r;
             }
+            else if (p is BoardsReadParameters_Outhub)
+            {
+                BoardsReadParameters_Outhub b = p as BoardsReadParameters_Outhub;
+                BoardsReader_Outhub r = new BoardsReader_Outhub();
+                r.FilePath = b.DataPath;
+                r.DownloadGrid = b.DownloadGrid;
+                return r;
+            }
             return null;
         }
+      
     }
 }

@@ -17,4 +17,12 @@ namespace BindFinder.DataManager.Boards.Readers
             this.Year = year;
         }
     }
+    public class BoardsReadParameters_Outhub : BoardsReadParameters
+    {
+        public bool DownloadGrid { get; }
+        public BoardsReadParameters_Outhub(string databasePath, bool downloadGrid) : base(databasePath)
+        {
+            this.DownloadGrid = downloadGrid;
+        }
+    }
 }

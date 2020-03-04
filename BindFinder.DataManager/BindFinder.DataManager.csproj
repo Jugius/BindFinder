@@ -36,6 +36,9 @@
       <HintPath>..\..\Libraries\Geocoding\Geocoding\bin\Release\Geocoding.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ookii.Dialogs">
       <HintPath>..\..\Libraries\Ookii.Dialogs\bin\Release\Ookii.Dialogs.dll</HintPath>
     </Reference>
@@ -49,15 +52,19 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binds\Readers\LinesExcelReader.cs" />
     <Compile Include="Binds\Writers\ExcelBindsWriter.cs" />
     <Compile Include="Binds\Writers\KmlBindsWriter.cs" />
+    <Compile Include="Boards\Readers\BoardsReader_Outhub.cs" />
     <Compile Include="Boards\Writers\ExcelBoardsWriter.cs" />
     <Compile Include="Boards\Writers\KmlBoardsWriter.cs" />
     <Compile Include="Boards\Writers\WriterBuilder.cs" />
+    <Compile Include="Board_Outhub.cs" />
+    <Compile Include="GrigDownload\OuthubResponse.cs" />
     <Compile Include="IProcessor.cs" />
     <Compile Include="Binds\Readers\ReaderBuilder.cs" />
     <Compile Include="Binds\Readers\SavedExcelReader.cs" />

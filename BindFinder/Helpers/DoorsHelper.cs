@@ -1,5 +1,4 @@
 ﻿using BindFinder.AppModels.DataReaders;
-using BindFinder.DataManager;
 using System;
 
 

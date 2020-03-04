@@ -3,7 +3,7 @@ using Geocoding;
 
 namespace BindFinder.DataManager
 {
-    internal class Board_Doors : IBoard
+    internal sealed class Board_Doors : IBoard
     {
         #region Interface implementation
         public string ID => this.Dix.ToString();
