@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>BindFinder</AssemblyName>
+    <RootNamespace>BindFinder</RootNamespace>
+    <ApplicationIcon>Resources\Map-Marker-Grey_Blue_Icon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\input_20.png" />
+    <None Remove="Resources\Map-Marker-Grey_Blue_Icon.ico" />
+    <None Remove="Resources\open_file_20px.png" />
+    <None Remove="Resources\save_20.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GMap.NET.WinPresentation" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\libControls.Core.WPF\libControls.Core.WPF.csproj" />
+    <ProjectReference Include="..\..\OutOfHome\OutOfHome.Binds\OutOfHome.Binds.csproj" />
+    <ProjectReference Include="..\..\OutOfHome\OutOfHome.Exports.Excel\OutOfHome.Exports.Excel.csproj" />
+    <ProjectReference Include="..\..\OutOfHome\OutOfHome.Imports.Excel\OutOfHome.Imports.Excel.csproj" />
+    <ProjectReference Include="..\..\OutOfHome\OutOfHome.Models\OutOfHome.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>..\..\..\..\Install\programming\Components\Telerik UI\Telerik UI for WPF\WPF50\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>..\..\..\..\Install\programming\Components\Telerik UI\Telerik UI for WPF\WPF50\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\..\..\..\Install\programming\Components\Telerik UI\Telerik UI for WPF\WPF50\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\..\..\..\Install\programming\Components\Telerik UI\Telerik UI for WPF\WPF50\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>..\..\..\..\Install\programming\Components\Telerik UI\Telerik UI for WPF\WPF50\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\input_20.png" />
+    <Resource Include="Resources\Map-Marker-Grey_Blue_Icon.ico" />
+    <Resource Include="Resources\open_file_20px.png" />
+    <Resource Include="Resources\save_20.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
