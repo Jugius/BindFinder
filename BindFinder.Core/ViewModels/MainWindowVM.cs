@@ -32,7 +32,7 @@ namespace BindFinder.ViewModels
             if(addresses == null || addresses.Length == 0)
                 return;
 
-            OutOfHome.Binds.BindBuilder b = new OutOfHome.Binds.BindBuilder { ApiKey = "AIzaSyAlJPGeLs0xRXbdWROekPrJktrv2bU1QvQ" };
+            OutOfHome.Binds.BindBuilder b = new OutOfHome.Binds.BindBuilder();
 
             foreach(var adr in addresses)
             {
