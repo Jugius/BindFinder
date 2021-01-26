@@ -14,7 +14,7 @@ namespace BindFinder.Helpers
             {
                 bool notExist = !System.IO.File.Exists(OuthubGridFile);
                 DataManager.Boards.Readers.BoardsReadParameters_Outhub p = new DataManager.Boards.Readers.BoardsReadParameters_Outhub(OuthubGridFile, notExist);
-
+                p.OuthubOnly = true;
                 if (notExist && messageRequest)
                     System.Windows.Forms.MessageBox.Show(noGridInCash, "База данных OUTHUB", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
 

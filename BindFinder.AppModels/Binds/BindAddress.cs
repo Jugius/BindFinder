@@ -83,7 +83,6 @@ namespace BindFinder.AppModels.Binds
                 switch (c.Types[0])
                 {
                     case GoogleAddressType.Unknown:
-                        break;
                     case GoogleAddressType.StreetAddress:
                         break;
                     case GoogleAddressType.Route:
@@ -197,13 +196,12 @@ namespace BindFinder.AppModels.Binds
         }
         public static BindAddress Create(IEnumerable<Address> addresses)
         {
-            List<GoogleAddress> list = addresses.Select(a => a as GoogleAddress).ToList();
-            var priority = list.FirstOrDefault(a =>
+            var priority = addresses.Cast<GoogleAddress>().FirstOrDefault(a =>
                 (a.Type == GoogleAddressType.StreetAddress && (a.LocationType == GoogleLocationType.Rooftop || a.LocationType == GoogleLocationType.GeometricCenter)) ||
                 (a.Type == GoogleAddressType.Route && a.LocationType == GoogleLocationType.GeometricCenter) ||
                 (a.Type == GoogleAddressType.Premise && a.LocationType == GoogleLocationType.Rooftop));
 
-            return Create(list, priority ?? list.First());
+            return Create(addresses, priority ?? addresses.First());
         }
 
         public static BindAddress Create(IEnumerable<Address> addresses, Location coordinates)

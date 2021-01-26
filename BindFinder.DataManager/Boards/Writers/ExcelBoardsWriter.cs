@@ -54,13 +54,13 @@ namespace BindFinder.DataManager.Boards.Writers
                         xlWorkSheet.Range["F" + rowNumber].Value = board.Type;
                         xlWorkSheet.Range["G" + rowNumber].Value = board.Size;
                         xlWorkSheet.Range["H" + rowNumber].Value = board.Side;
-                        if (board.Metrics != null)
+                        if (board.MediaParameters != null)
                         {
-                            xlWorkSheet.Range["I" + rowNumber].Value = board.Metrics.OTS;
-                            xlWorkSheet.Range["J" + rowNumber].Value = string.Format("{0:0.00}", board.Metrics.GRP);
+                            xlWorkSheet.Range["I" + rowNumber].Value = board.MediaParameters.OTS;
+                            xlWorkSheet.Range["J" + rowNumber].Value = string.Format("{0:0.00}", board.MediaParameters.GRP);
                         }
-                        xlWorkSheet.Range["K" + rowNumber].Value = board.Code;
-                        xlWorkSheet.Range["L" + rowNumber].Value = board.ID;
+                        xlWorkSheet.Range["K" + rowNumber].Value = board.SupplierCode;
+                        xlWorkSheet.Range["L" + rowNumber].Value = board.ProviderID;
                         if (board.Lighting)
                             xlWorkSheet.Range["M" + rowNumber].Value = @"*";
                         if (!string.IsNullOrEmpty(board.URL_Photo))

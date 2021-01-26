@@ -19,17 +19,22 @@ namespace BindFinder.DataManager.Boards.Readers
                 if (!System.IO.File.Exists(System.IO.Path.Combine(b.DataPath, dbFile)))
                     throw new Exception($"Файл {dbFile} не найден в папке: {b.DataPath}");
 
-                BoardsReader_Doors r = new BoardsReader_Doors();
-                r.ConnectionString= $"Provider = VFPOLEDB.1; Data Source = {b.DataPath}";
-                r.Year = b.Year;
+                BoardsReader_Doors r = new BoardsReader_Doors
+                {
+                    ConnectionString = $"Provider = VFPOLEDB.1; Data Source = {b.DataPath}",
+                    Year = b.Year
+                };
                 return r;
             }
             else if (p is BoardsReadParameters_Outhub)
             {
                 BoardsReadParameters_Outhub b = p as BoardsReadParameters_Outhub;
-                BoardsReader_Outhub r = new BoardsReader_Outhub();
-                r.FilePath = b.DataPath;
-                r.DownloadGrid = b.DownloadGrid;
+                BoardsReader_Outhub r = new BoardsReader_Outhub
+                {
+                    FilePath = b.DataPath,
+                    DownloadGrid = b.DownloadGrid,
+                    OuthubOnly = b.OuthubOnly                    
+                };
                 return r;
             }
             return null;

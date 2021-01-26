@@ -9,5 +9,6 @@ namespace BindFinder.Helpers
     internal static class ConfigHelper
     {
         public static string RoamingDirectory { get { return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BindFinder"; } }
+        public static bool IsRegistered { get { return true; } }
     }
 }

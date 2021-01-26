@@ -284,7 +284,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.panelBindInfo);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer1.Size = new System.Drawing.Size(1091, 531);
-            this.splitContainer1.SplitterDistance = 824;
+            this.splitContainer1.SplitterDistance = 819;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 6;
             // 
@@ -317,7 +317,7 @@
             this.olvBinds.Name = "olvBinds";
             this.olvBinds.ShowGroups = false;
             this.olvBinds.ShowImagesOnSubItems = true;
-            this.olvBinds.Size = new System.Drawing.Size(824, 509);
+            this.olvBinds.Size = new System.Drawing.Size(819, 509);
             this.olvBinds.TabIndex = 0;
             this.olvBinds.UseCompatibleStateImageBehavior = false;
             this.olvBinds.UseExplorerTheme = true;
@@ -379,7 +379,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 509);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(824, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(819, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
@@ -397,7 +397,7 @@
             this.panelBindInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBindInfo.Location = new System.Drawing.Point(0, 0);
             this.panelBindInfo.Name = "panelBindInfo";
-            this.panelBindInfo.Size = new System.Drawing.Size(262, 509);
+            this.panelBindInfo.Size = new System.Drawing.Size(267, 509);
             this.panelBindInfo.TabIndex = 3;
             this.panelBindInfo.Resize += new System.EventHandler(this.PanelBindInfo_Resize);
             // 
@@ -408,7 +408,7 @@
             this.lblBindCoordinates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblBindCoordinates.Location = new System.Drawing.Point(0, 0);
             this.lblBindCoordinates.Name = "lblBindCoordinates";
-            this.lblBindCoordinates.Size = new System.Drawing.Size(262, 74);
+            this.lblBindCoordinates.Size = new System.Drawing.Size(267, 74);
             this.lblBindCoordinates.TabIndex = 1;
             this.lblBindCoordinates.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
@@ -421,7 +421,7 @@
             this.panelMap_Link.Location = new System.Drawing.Point(0, 203);
             this.panelMap_Link.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMap_Link.Name = "panelMap_Link";
-            this.panelMap_Link.Size = new System.Drawing.Size(262, 44);
+            this.panelMap_Link.Size = new System.Drawing.Size(267, 44);
             this.panelMap_Link.TabIndex = 6;
             // 
             // radShowGoogleMap
@@ -458,7 +458,7 @@
             this.panelBindMap.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBindMap.Location = new System.Drawing.Point(0, 247);
             this.panelBindMap.Name = "panelBindMap";
-            this.panelBindMap.Size = new System.Drawing.Size(262, 262);
+            this.panelBindMap.Size = new System.Drawing.Size(267, 262);
             this.panelBindMap.TabIndex = 4;
             // 
             // lblOpenMap
@@ -470,7 +470,7 @@
             this.lblOpenMap.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(180)))), ((int)(((byte)(209)))));
             this.lblOpenMap.Location = new System.Drawing.Point(0, 0);
             this.lblOpenMap.Name = "lblOpenMap";
-            this.lblOpenMap.Size = new System.Drawing.Size(262, 262);
+            this.lblOpenMap.Size = new System.Drawing.Size(267, 262);
             this.lblOpenMap.TabIndex = 4;
             this.lblOpenMap.TabStop = true;
             this.lblOpenMap.Text = "Открыть карту Google";
@@ -484,7 +484,7 @@
             this.pictureSchema.Location = new System.Drawing.Point(0, 0);
             this.pictureSchema.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureSchema.Name = "pictureSchema";
-            this.pictureSchema.Size = new System.Drawing.Size(262, 262);
+            this.pictureSchema.Size = new System.Drawing.Size(267, 262);
             this.pictureSchema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureSchema.TabIndex = 0;
             this.pictureSchema.TabStop = false;
@@ -497,7 +497,7 @@
             this.statusStrip2.Location = new System.Drawing.Point(0, 509);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip2.Size = new System.Drawing.Size(262, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(267, 22);
             this.statusStrip2.TabIndex = 2;
             this.statusStrip2.Text = "statusStrip2";
             // 

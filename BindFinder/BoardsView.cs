@@ -49,11 +49,15 @@ namespace BindFinder
                 }
             }
 
-            olvColumn_Code.AspectGetter = delegate (object row) { return ((IBoard)row).Code; };
-            olvColumn_GRP.AspectGetter = delegate (object row) { return (row as IBoard).Metrics?.GRP; };
-            olvColumn_ID.AspectGetter = delegate (object row) { return (row as IBoard).ID; };
+            olvColumn_Code.AspectGetter = delegate (object row)
+            {
+                IBoard b = row as IBoard;
+                return b.Supplier == "OUTHUB" ? b.ProviderID : b.SupplierCode;
+            };
+            olvColumn_GRP.AspectGetter = delegate (object row) { return (row as IBoard).MediaParameters?.GRP; };
+            olvColumn_DoorsID.AspectGetter = delegate (object row) { return (row as IBoard).MediaParameters?.DoorsID; };
             olvColumn_Light.AspectGetter = delegate (object row) { return (row as IBoard).Lighting ? "+" : null; };
-            olvColumn_OTS.AspectGetter = delegate (object row) { return (row as IBoard).Metrics?.OTS; };
+            olvColumn_OTS.AspectGetter = delegate (object row) { return (row as IBoard).MediaParameters?.OTS; };
             olvColumn_Side.AspectGetter = delegate (object row) { return (row as IBoard).Side; };
             olvColumn_Size.AspectGetter = delegate (object row) { return (row as IBoard).Size; };
             olvColumn_Street.AspectGetter = delegate (object row) { return (row as IBoard).Address.Street; };
@@ -295,7 +299,7 @@ namespace BindFinder
                 Bind bind = obj as Bind;
                 foreach (var board in bind.BindedBoards)
                 {
-                    if (stringHash.Contains(board.ID) || stringHash.Contains(board.Code))
+                    if (stringHash.Contains(board.ProviderID) || stringHash.Contains(board.SupplierCode))
                         board.IsChecked = true;
                 }
             }
@@ -307,7 +311,7 @@ namespace BindFinder
             if (MessageBox.Show(message, "Выделение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
             foreach (var obj in olvBinds.Objects)
-                foreach (var board in (obj as Bind).BindedBoards)
+                foreach (var board in (obj as Bind).BindedBoards)                    
                     board.IsChecked = true;
         }
 
@@ -396,6 +400,20 @@ namespace BindFinder
         {
             var reader = Helpers.OuthubHelper.GetDataReader();
             var boards = reader.ReadData().ToList();
+
+            var d_reader = Helpers.DoorsHelper.GetDataReader();
+
+            Dictionary<int, IBoard> dic = d_reader.Boards.ToDictionary(a => a.MediaParameters.DoorsID, a=>a);
+
+            foreach (var brd in boards.Where(a=>(a.Supplier=="OUTHUB" && a.MediaParameters!=null)))
+            {
+                if (dic.TryGetValue(brd.MediaParameters.DoorsID, out IBoard founded))
+                {
+                    brd.Supplier = founded.Supplier;
+                    brd.Address = founded.Address;
+                }
+
+            }          
             olvBoards.SetObjects(boards);
         }
     }

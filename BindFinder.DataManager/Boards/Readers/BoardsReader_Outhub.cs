@@ -11,10 +11,15 @@ namespace BindFinder.DataManager.Boards.Readers
         private OuthubResponse Response;
         public string FilePath { get; set; }
         public bool DownloadGrid { get; set; }
+        public bool OuthubOnly { get; set; }
         public override IEnumerable<IBoard> ReadData()
         {
             var response = GetResponseAsync().GetAwaiter().GetResult();
             var boards = response.items.Select(a => new Board_Outhub(a));
+            
+            if (this.OuthubOnly)
+                boards = boards.Where(a => (a.Supplier == "OUTHUB" || a.Supplier == "ПРАЙМ"));
+
             return boards;
         }
         private async Task<OuthubResponse> GetResponseAsync()

@@ -66,7 +66,7 @@
             this.olvColumn_GRP = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_Type = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_Size = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn_ID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_DoorsID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_Light = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblBoardsCount = new System.Windows.Forms.ToolStripStatusLabel();
@@ -401,7 +401,7 @@
             this.olvBoards.AllColumns.Add(this.olvColumn_GRP);
             this.olvBoards.AllColumns.Add(this.olvColumn_Type);
             this.olvBoards.AllColumns.Add(this.olvColumn_Size);
-            this.olvBoards.AllColumns.Add(this.olvColumn_ID);
+            this.olvBoards.AllColumns.Add(this.olvColumn_DoorsID);
             this.olvBoards.AllColumns.Add(this.olvColumn_Light);
             this.olvBoards.AllowColumnReorder = true;
             this.olvBoards.AlternateRowBackColor = System.Drawing.Color.WhiteSmoke;
@@ -419,7 +419,7 @@
             this.olvColumn_GRP,
             this.olvColumn_Type,
             this.olvColumn_Size,
-            this.olvColumn_ID,
+            this.olvColumn_DoorsID,
             this.olvColumn_Light});
             this.olvBoards.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvBoards.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -491,9 +491,9 @@
             // 
             this.olvColumn_Size.Text = "Разм.";
             // 
-            // olvColumn_ID
+            // olvColumn_DoorsID
             // 
-            this.olvColumn_ID.Text = "ID";
+            this.olvColumn_DoorsID.Text = "Doors#";
             // 
             // olvColumn_Light
             // 
@@ -506,6 +506,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 604);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1018, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -734,7 +735,7 @@
         private BrightIdeasSoftware.OLVColumn olvColumn_GRP;
         private BrightIdeasSoftware.OLVColumn olvColumn_Type;
         private BrightIdeasSoftware.OLVColumn olvColumn_Size;
-        private BrightIdeasSoftware.OLVColumn olvColumn_ID;
+        private BrightIdeasSoftware.OLVColumn olvColumn_DoorsID;
         private BrightIdeasSoftware.OLVColumn olvColumn_Light;
         private BrightIdeasSoftware.FastObjectListView olvBinds;
         private BrightIdeasSoftware.OLVColumn olvColumn_BindName;

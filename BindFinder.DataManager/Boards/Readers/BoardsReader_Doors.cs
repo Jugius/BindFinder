@@ -15,7 +15,7 @@ namespace BindFinder.DataManager.Boards.Readers
         {
             DBSet.NosDataTableDataTable table = GetTableAsync().GetAwaiter().GetResult();
             
-            var boards = table.Where(a => !a.deleted).Select(a => new Board_Doors(a)).Where(a => !string.IsNullOrEmpty(a.Address.Street)).DistinctBy(a => a.ID);
+            var boards = table.Where(a => !a.deleted).Select(a => new Board_Doors(a)).Where(a => !string.IsNullOrEmpty(a.Address.Street)).DistinctBy(a => a.ProviderID);
             return boards;
         }
         private async Task<DBSet.NosDataTableDataTable> GetFilledTableAsync()

@@ -65,6 +65,7 @@
     <Compile Include="Boards\Writers\WriterBuilder.cs" />
     <Compile Include="Board_Outhub.cs" />
     <Compile Include="GrigDownload\OuthubResponse.cs" />
+    <Compile Include="GrigDownload\WebUtils.cs" />
     <Compile Include="IProcessor.cs" />
     <Compile Include="Binds\Readers\ReaderBuilder.cs" />
     <Compile Include="Binds\Readers\SavedExcelReader.cs" />

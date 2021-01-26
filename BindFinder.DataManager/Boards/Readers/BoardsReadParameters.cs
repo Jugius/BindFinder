@@ -20,6 +20,7 @@ namespace BindFinder.DataManager.Boards.Readers
     public class BoardsReadParameters_Outhub : BoardsReadParameters
     {
         public bool DownloadGrid { get; }
+        public bool OuthubOnly { get; set; }
         public BoardsReadParameters_Outhub(string databasePath, bool downloadGrid) : base(databasePath)
         {
             this.DownloadGrid = downloadGrid;

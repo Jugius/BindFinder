@@ -43,7 +43,7 @@
     <Compile Include="Binds\Bind.cs" />
     <Compile Include="Binds\BindAddress.cs" />
     <Compile Include="Boards\BoardAddress.cs" />
-    <Compile Include="Boards\BoardMetrics.cs" />
+    <Compile Include="Boards\MediaParameters.cs" />
     <Compile Include="Boards\IBoard.cs" />
     <Compile Include="DataReaders\BoardsReadCompletedEventArgs.cs" />
     <Compile Include="DataReaders\IBoardsReader.cs" />
